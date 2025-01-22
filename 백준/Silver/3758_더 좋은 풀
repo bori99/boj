@@ -1,0 +1,39 @@
+# include <bits/stdc++.h> 
+using namespace std; 
+
+int t, n, k, id, m, ii, j, s, cnt[111], last[111]; 
+map <int, int> mp[111]; 
+vector < tuple <int, int, int, int> > res; 
+
+// 코드 공부용으로 이미 맞춘 문제를 다른 분의 코드를 복사해서 사용
+int main(void){
+    cin >> t; 
+    while(t--){
+        cin >> n >> k >> id >> m; 
+        memset(cnt, 0, sizeof(cnt)); 
+        for(int i=1;i<=n;i++) mp[i].clear(); 
+        for(int i=1;i<=m;i++){
+            cin >> ii >> j >> s; 
+            cnt[ii]++; 
+            mp[ii][j] = max(mp[ii][j], s); 
+            last[ii] = i; 
+        }
+        res.clear(); 
+        for(int i=1;i<=n;i++){
+            int sum = 0; 
+            for(auto it=mp[i].begin();it!=mp[i].end();it++){
+                sum += it->second; 
+            }
+            res.push_back({-sum, cnt[i], last[i], i}); 
+        }
+        sort(res.begin(), res.end()); 
+        int rk = 0; 
+        for(;;rk++){
+            auto [_, __, ___, i] = res[rk]; 
+            if(i == id){
+                cout << rk + 1 << "\n"; 
+                break; 
+            }
+        }
+    }
+}
