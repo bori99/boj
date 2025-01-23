@@ -9,7 +9,8 @@
 using namespace std;
 
 int p, m;
-
+/* 구조체 안에 벡터를 따로 두어서 미리 값들을 모아놓고 이들을 my sort로 사전순 정렬을 통해 해결함.
+우선 my sort가 헷갈렸는데, 해당하는 조건에만 일치하게 로직 넣어주면 해결한 거 인지하고 넘어가기*/
 struct Room
 {
 	int level;
