@@ -9,7 +9,7 @@
 using namespace std;
 /* 자료구조를 선택하는 문제란 것은 알았으나 map으로 접근해서 시간초과. set으로 접근해도 시간초과였을 것임. set과 map은 정렬을 하는 것을 가정한 red black tree로 구현됨
 그래서 삽입, 발견, 삭제등이 O(logn)에 이루어져서 데이터가 빈번히 삽입, 삭제될시 효율적이지 못해 시간초과가 발생했던 것임. 이럴떄는 정렬을 하지 않고 Hash table로 내부 
-구현된 Unordered set과 map을 이용해야됬음. */
+구현된 Unordered set과 map을 이용해야됬음. hash function이 이상적이라면, 삽입, 삭제가 O(1)에 이루어짐. */
 int N, M;
 unordered_set<string> keyword;
 
